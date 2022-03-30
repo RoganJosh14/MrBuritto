@@ -1,0 +1,167 @@
+<!DOCTYPE html> 
+
+	<html lang="en">
+
+	<head>
+	
+	<!-- Name of the web will refelct in the tab section-->
+
+		<title> Mr Burrito Order Form </title>
+
+	<!-- below are the link reference to the style sheet and javascript function of the form -->
+	
+		<meta charset="UTF-8"> 
+		<link rel="stylesheet" href="external.css">
+		<script type="text/javascript" src="CA2Script.js"></script>
+	
+	</head>
+
+
+		<body> 
+		
+		<!-- Within the header class will be the Mr. Burrito logo and the rolling ticker advertising the 10% discount,
+			ticker will paude upon hovering the mouse over it-->
+			
+			<div class= "header">
+		
+
+				<img src ="MrBurrito.jpeg" alt="This is an image" id="logo">
+		
+				<h1>WELCOME TO MR BURRITO !</h1>
+		
+				<div class ="ticker">
+				<div class ="message">
+				<div class ="state"> TYPE IN THIS MONTH'S DISCOUNT CODE "MEXTEXGOOD" & ENJOY 10% OFF TOTAL BILL!</div>
+	
+				</div>
+				</div>
+				
+			</div>
+		
+			<!-- Below is the div class which contains the form -->
+			
+				<div class ="form">
+			
+			<!-- This is the form format as shown below, name of the form and the action upon submission.
+				THe function check info will take place upon submit-->
+			
+				<form name="BurritoOrder" method="post" action="submission.html" onsubmit="return checkinfo()">
+		
+			<!-- The header tage within the form-->
+		
+						<h2> Please fill in the details to place your order!</h2>
+						
+				<!--table to ensure the form is in good format-->
+						
+				<table>
+			
+				<!-- Text box and fields of each input is shown below -->
+				
+				<tr>
+		
+					<td><label> Username: </label></td>
+					<td> <input type="text" name="Username" id ="Username" size="30" maxlength="50"></td>
+
+				</tr>
+
+				<tr>
+			
+					<td><label> Password: </label></td> 
+					<td><input type="Password" name="Password"  id ="Password" minlength="9" size="30" maxlength="9"></td>
+		
+				</tr>
+		
+		
+				<tr>
+		
+					<td> <label>Burrito Size</label> </td>
+					
+					<!-- The drop down box for selection with onchange function related to the javascript-->
+		 
+				<td>
+		
+						<select id="ddselect" onchange="calculateTotal();">
+		
+						<option value ="0.00">Select Size</option>
+						<option value ="7.00">Large(€7.00)</option>
+						<option value ="9.00">Extra- Large(€9.00)</option>
+						<option value ="17.50">Supersize(€17.50)</option>
+		
+						</select>
+		 
+				</td>
+		
+				</tr>
+		
+				<tr>
+				
+				<!-- By clicking on the arrows for selection of quantity will fire the calculation function-->
+	
+					<td><label> Burrito Qty: </label> </td>
+		
+				<td>
+			
+					<input type ="Number" id="Qty" min= "1" max="1000" onchange="calculateTotal();">
+				
+				</td>
+		
+				</tr>
+				
+				<!-- Only  upon entering "MexTexGood" will the alert box pop up to inform you of the 10% discount-->
+			
+				<tr>
+	
+				<td><label> Discount Code: </label>  </td>
+		
+				<td>
+			
+					<input type ="text" id="dcode">
+				
+				</td>
+		
+				</tr>
+		
+				<tr>
+		
+				<!-- The text box will get the auto calculated amount based on the selection and refelct in this field-->
+				
+					<td><label>Total Amount:  €</label></td> 
+		
+					<td><input type="Number"  placeholder="0.00" id ="totalPrice" readonly></td>
+		
+				</tr>
+			
+		
+			
+				</table>
+				
+				<!-- Brown Submit button which will fire the "check info" function to ensure the fields have been filled before sending the form-->
+						
+					<label> <input type="Submit" value="Send your order"> </label>
+	
+				</form>
+
+	 
+	 
+				</div>
+		
+				<!-- The ticker is within th footer-->
+			
+			 <div class="footer">
+	 
+				<div class ="ticker">
+				<div class ="message">
+				
+				<!-- the message within the ticker-->
+			
+				<div class ="state"> TYPE IN THIS MONTH'S DISCOUNT CODE "MEXTEXGOOD" & ENJOY 10% OFF TOTAL BILL!</div>
+	
+				</div>
+				</div>
+				
+			</div>
+	
+		</body> 
+
+	</html>
+
